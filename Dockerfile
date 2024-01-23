@@ -1,4 +1,4 @@
-FROM ruby:2.7.8-alpine as builder
+FROM ruby:2.7.1-alpine as builder
 
 ARG BUNDLE_GEMS__CONTRIBSYS__COM="xyz"
 ENV BUNDLE_GEMS__CONTRIBSYS__COM=$BUNDLE_GEMS__CONTRIBSYS__COM
@@ -29,7 +29,7 @@ RUN bundle exec rake assets:precompile
 
 ####################################################################
 
-FROM 423594114171.dkr.ecr.us-east-2.amazonaws.com/eq/ruby-base-image:ruby-2.7.8-latest as rails
+FROM 423594114171.dkr.ecr.us-east-2.amazonaws.com/eq/ruby-base-image:ruby-2.7.1-latest as rails
 
 ARG BUILD_VERSION="abcdefg"
 ENV BUILD_VERSION=$BUILD_VERSION
